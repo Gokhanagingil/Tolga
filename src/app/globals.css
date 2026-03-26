@@ -1,0 +1,122 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply antialiased text-gray-800 bg-white;
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-istanbul-navy text-white px-6 py-3 rounded-xl font-semibold
+      hover:bg-opacity-90 transition-all duration-300 shadow-lg hover:shadow-xl
+      active:scale-[0.98] inline-flex items-center justify-center gap-2;
+  }
+
+  .btn-secondary {
+    @apply bg-white text-istanbul-navy border-2 border-istanbul-navy px-6 py-3
+      rounded-xl font-semibold hover:bg-istanbul-navy hover:text-white
+      transition-all duration-300 inline-flex items-center justify-center gap-2;
+  }
+
+  .btn-gold {
+    @apply bg-istanbul-gold text-white px-6 py-3 rounded-xl font-semibold
+      hover:bg-opacity-90 transition-all duration-300 shadow-lg hover:shadow-xl
+      active:scale-[0.98] inline-flex items-center justify-center gap-2;
+  }
+
+  .card {
+    @apply bg-white rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden;
+  }
+
+  .input-field {
+    @apply w-full px-4 py-3 border border-gray-200 rounded-xl focus:ring-2
+      focus:ring-istanbul-sea focus:border-transparent outline-none
+      transition-all duration-200 bg-white;
+  }
+
+  .badge {
+    @apply inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold;
+  }
+
+  .gradient-text {
+    @apply bg-gradient-to-r from-istanbul-navy to-istanbul-sea bg-clip-text text-transparent;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+.animate-slide-up {
+  animation: slideUp 0.5s ease-out;
+}
+
+.animate-slide-in-right {
+  animation: slideInRight 0.3s ease-out;
+}
+
+.animate-pulse-slow {
+  animation: pulse 3s infinite;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideInRight {
+  from { opacity: 0; transform: translateX(20px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #c1c1c1;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #a1a1a1;
+}
+
+.gallery-360 {
+  perspective: 1000px;
+  overflow: hidden;
+  cursor: grab;
+}
+
+.gallery-360:active {
+  cursor: grabbing;
+}
+
+.tour-overlay {
+  background: radial-gradient(ellipse at center, transparent 0%, rgba(0,0,0,0.3) 100%);
+}
