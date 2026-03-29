@@ -3,7 +3,7 @@ import './globals.css';
 
 export const metadata: Metadata = {
   title: 'İstanbul Emlak Platformu | Hayalinizdeki Evi Bulun',
-  description: 'İstanbul\'un en prestijli semtlerinde satılık ve kiralık mülkler. Akıllı arama, AI destekli öneriler ve etkileşimli 360° turlar ile hayalinizdeki evi bulun.',
+  description: 'İstanbul\'un en prestijli semtlerinde satılık ve kiralık mülkler. Akıllı arama ve kişiselleştirilmiş öneriler ile hayalinizdeki evi bulun.',
   keywords: 'istanbul emlak, satılık daire, kiralık daire, ev arama, mülk, gayrimenkul',
 };
 

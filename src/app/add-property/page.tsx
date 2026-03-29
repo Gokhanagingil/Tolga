@@ -10,8 +10,7 @@ import { useAppStore } from '@/lib/store';
 import { ISTANBUL_DISTRICTS } from '@/lib/data';
 import { PropertyType, PropertyCategory } from '@/types';
 import {
-  User, Plus, Image, MapPin, Home, DollarSign,
-  CheckCircle2, ArrowRight, Building2, Upload, X
+  User, Plus, CheckCircle2, Building2, X
 } from 'lucide-react';
 
 export default function AddPropertyPage() {
@@ -108,7 +107,6 @@ export default function AddPropertyPage() {
         { url: 'https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=800&h=600&fit=crop', alt: 'Yatak odası', isMain: false },
         { url: 'https://images.unsplash.com/photo-1600573472550-8090b5e0745e?w=800&h=600&fit=crop', alt: 'Banyo', isMain: false },
       ],
-      has360Tour: false,
       agentId: user!.id,
       agentName: user!.name,
       agentPhone: user!.phone || '+90 5xx xxx xx xx',

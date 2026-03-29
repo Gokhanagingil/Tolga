@@ -9,7 +9,7 @@ import { useAppStore } from '@/lib/store';
 import { ISTANBUL_DISTRICTS } from '@/lib/data';
 import { PropertyType } from '@/types';
 import {
-  User, Mail, Phone, ChevronRight, MapPin, Home, DollarSign,
+  User, Mail, Phone, ChevronRight, MapPin, Home,
   Sparkles, CheckCircle2, ArrowRight, Building2
 } from 'lucide-react';
 

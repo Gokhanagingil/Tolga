@@ -1,7 +1,6 @@
 'use client';
 
 import { useState } from 'react';
-import { useRouter } from 'next/navigation';
 import Link from 'next/link';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
@@ -10,12 +9,10 @@ import { useAppStore } from '@/lib/store';
 import { ISTANBUL_DISTRICTS } from '@/lib/data';
 import { PropertyType } from '@/types';
 import {
-  User, Mail, Phone, MapPin, Heart, Settings, Sparkles,
-  CheckCircle2, Save, Home, Clock
+  User, Mail, Phone, Settings, Sparkles, Clock
 } from 'lucide-react';
 
 export default function ProfilePage() {
-  const router = useRouter();
   const { user, isLoggedIn, updatePreferences, getFavoriteProperties } = useAppStore();
   const [activeTab, setActiveTab] = useState<'profile' | 'preferences' | 'history'>('profile');
 
@@ -148,7 +145,7 @@ export default function ProfilePage() {
           <div className="bg-white rounded-2xl shadow-sm p-8 animate-fade-in">
             <div className="flex items-center gap-2 mb-6">
               <Sparkles className="w-5 h-5 text-istanbul-gold" />
-              <h2 className="text-lg font-semibold text-istanbul-navy">AI Tercihleriniz</h2>
+              <h2 className="text-lg font-semibold text-istanbul-navy">Tercihleriniz</h2>
             </div>
             <p className="text-sm text-gray-500 mb-6">
               Tercihlerinizi güncelleyerek daha doğru mülk önerileri alın.

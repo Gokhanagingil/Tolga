@@ -1,6 +1,6 @@
 'use client';
 
-import { useParams, useRouter } from 'next/navigation';
+import { useParams } from 'next/navigation';
 import Link from 'next/link';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
@@ -10,13 +10,12 @@ import ChatWidget from '@/components/ChatWidget';
 import { useAppStore } from '@/lib/store';
 import {
   Heart, Share2, MapPin, Bed, Bath, Maximize2, Building, Calendar, Sofa,
-  Phone, Mail, ArrowLeft, ChevronRight, Eye, Printer, Flag, CheckCircle2
+  Phone, Mail, ChevronRight, Eye, Printer, Flag, CheckCircle2
 } from 'lucide-react';
 
 export default function PropertyDetailPage() {
   const params = useParams();
-  const router = useRouter();
-  const { properties, isLoggedIn, toggleFavorite, isFavorite, getRecommendations } = useAppStore();
+  const { properties, isLoggedIn, toggleFavorite, isFavorite } = useAppStore();
 
   const property = properties.find((p) => p.id === params.id);
 
@@ -69,7 +68,7 @@ export default function PropertyDetailPage() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           <div className="lg:col-span-2 space-y-6">
-            <ImageGallery images={property.images} has360Tour={property.has360Tour} />
+            <ImageGallery images={property.images} />
 
             <div className="bg-white rounded-2xl p-6 shadow-sm">
               <div className="flex items-start justify-between mb-4">

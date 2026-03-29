@@ -4,7 +4,7 @@ import { useState } from 'react';
 import { useAppStore } from '@/lib/store';
 import { ISTANBUL_DISTRICTS } from '@/lib/data';
 import { PropertyType, PropertyCategory } from '@/types';
-import { Search, SlidersHorizontal, X, ChevronDown, RotateCcw } from 'lucide-react';
+import { Search, SlidersHorizontal, RotateCcw } from 'lucide-react';
 
 export default function SearchFilters({ compact = false }: { compact?: boolean }) {
   const { filters, setFilters, resetFilters } = useAppStore();
