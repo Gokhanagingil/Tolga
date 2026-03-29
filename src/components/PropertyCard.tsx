@@ -5,7 +5,7 @@ import Link from 'next/link';
 import { Property } from '@/types';
 import { useAppStore } from '@/lib/store';
 import {
-  Heart, MapPin, Bed, Bath, Maximize2, Eye, Camera, RotateCcw, ChevronLeft, ChevronRight
+  Heart, MapPin, Bed, Bath, Maximize2, Eye, Camera, ChevronLeft, ChevronRight
 } from 'lucide-react';
 
 export default function PropertyCard({ property }: { property: Property }) {
@@ -68,18 +68,12 @@ export default function PropertyCard({ property }: { property: Property }) {
           )}
         </div>
 
-        <div className="absolute bottom-3 left-3 right-3 flex justify-between items-end">
+          <div className="absolute bottom-3 left-3 right-3 flex justify-between items-end">
           <div className="flex gap-2">
             <span className="badge bg-black/50 backdrop-blur text-white text-xs">
               <Camera className="w-3 h-3 mr-1" />
               {property.images.length}
             </span>
-            {property.has360Tour && (
-              <span className="badge bg-istanbul-gold/90 backdrop-blur text-white text-xs">
-                <RotateCcw className="w-3 h-3 mr-1" />
-                360°
-              </span>
-            )}
           </div>
           <span className="badge bg-black/50 backdrop-blur text-white text-xs">
             <Eye className="w-3 h-3 mr-1" />

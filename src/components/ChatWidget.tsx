@@ -19,7 +19,7 @@ export default function ChatWidget() {
     setInput('');
   };
 
-  const handleKeyPress = (e: React.KeyboardEvent) => {
+  const handleKeyDown = (e: React.KeyboardEvent) => {
     if (e.key === 'Enter' && !e.shiftKey) {
       e.preventDefault();
       handleSend();
@@ -36,7 +36,7 @@ export default function ChatWidget() {
           <MessageCircle className="w-6 h-6" />
           <span className="absolute -top-1 -right-1 w-4 h-4 bg-istanbul-gold rounded-full animate-pulse-slow" />
           <span className="absolute right-full mr-3 whitespace-nowrap bg-gray-900 text-white text-xs px-3 py-1.5 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none">
-            Canlı Destek
+            Destek
           </span>
         </button>
       )}
@@ -51,10 +51,10 @@ export default function ChatWidget() {
                 <Headphones className="w-5 h-5" />
               </div>
               <div>
-                <h3 className="font-semibold text-sm">Canlı Destek</h3>
+                <h3 className="font-semibold text-sm">Destek Asistanı</h3>
                 <div className="flex items-center gap-1.5">
-                  <span className="w-2 h-2 bg-green-400 rounded-full" />
-                  <span className="text-xs text-gray-300">Çevrimiçi</span>
+                  <span className="w-2 h-2 bg-blue-400 rounded-full" />
+                  <span className="text-xs text-gray-300">Otomatik Yanıt</span>
                 </div>
               </div>
             </div>
@@ -95,7 +95,7 @@ export default function ChatWidget() {
                 type="text"
                 value={input}
                 onChange={(e) => setInput(e.target.value)}
-                onKeyPress={handleKeyPress}
+                onKeyDown={handleKeyDown}
                 placeholder="Mesajınızı yazın..."
                 className="input-field text-sm flex-1"
               />

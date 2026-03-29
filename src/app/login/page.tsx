@@ -6,13 +6,12 @@ import Link from 'next/link';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { useAppStore } from '@/lib/store';
-import { Mail, Lock, Building2, ArrowRight } from 'lucide-react';
+import { Mail, Building2, ArrowRight } from 'lucide-react';
 
 export default function LoginPage() {
   const router = useRouter();
   const { register } = useAppStore();
   const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
   const [error, setError] = useState('');
 
   const handleLogin = (e: React.FormEvent) => {
@@ -35,14 +34,21 @@ export default function LoginPage() {
             <Building2 className="w-8 h-8 text-istanbul-gold" />
           </div>
           <h1 className="text-2xl font-bold text-istanbul-navy font-display mb-2">
-            Hoş Geldiniz
+            Hızlı Giriş
           </h1>
           <p className="text-gray-500 text-sm">
-            Hesabınıza giriş yapın
+            Demo oturumu başlatmak için e-posta adresinizi girin
           </p>
         </div>
 
         <div className="bg-white rounded-2xl shadow-sm p-8">
+          <div className="bg-amber-50 border border-amber-200 rounded-xl p-3 mb-5">
+            <p className="text-xs text-amber-700">
+              Bu bir demo uygulamasıdır. Gerçek kimlik doğrulama sistemi bulunmamaktadır.
+              Girdiğiniz e-posta ile geçici bir oturum oluşturulur.
+            </p>
+          </div>
+
           <form onSubmit={handleLogin} className="space-y-5">
             <div>
               <label className="text-sm font-medium text-gray-700 mb-1.5 block">E-posta</label>
@@ -58,29 +64,7 @@ export default function LoginPage() {
               </div>
             </div>
 
-            <div>
-              <label className="text-sm font-medium text-gray-700 mb-1.5 block">Şifre</label>
-              <div className="relative">
-                <Lock className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400" />
-                <input
-                  type="password"
-                  value={password}
-                  onChange={(e) => setPassword(e.target.value)}
-                  placeholder="••••••••"
-                  className="input-field pl-10"
-                />
-              </div>
-            </div>
-
             {error && <p className="text-red-500 text-sm">{error}</p>}
-
-            <div className="flex items-center justify-between">
-              <label className="flex items-center gap-2">
-                <input type="checkbox" className="rounded border-gray-300 text-istanbul-navy focus:ring-istanbul-sea" />
-                <span className="text-sm text-gray-600">Beni hatırla</span>
-              </label>
-              <a href="#" className="text-sm text-istanbul-sea hover:underline">Şifremi unuttum</a>
-            </div>
 
             <button type="submit" className="btn-primary w-full">
               Giriş Yap
@@ -90,9 +74,9 @@ export default function LoginPage() {
 
           <div className="mt-6 pt-6 border-t border-gray-100 text-center">
             <p className="text-sm text-gray-500">
-              Hesabınız yok mu?{' '}
+              Tercihlerinizi de belirlemek ister misiniz?{' '}
               <Link href="/register" className="text-istanbul-sea font-semibold hover:underline">
-                Kayıt Ol
+                Detaylı Kayıt
               </Link>
             </p>
           </div>

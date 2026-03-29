@@ -47,15 +47,6 @@
     @apply inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold;
   }
 
-  .gradient-text {
-    @apply bg-gradient-to-r from-istanbul-navy to-istanbul-sea bg-clip-text text-transparent;
-  }
-}
-
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
 }
 
 .animate-fade-in {
@@ -64,10 +55,6 @@
 
 .animate-slide-up {
   animation: slideUp 0.5s ease-out;
-}
-
-.animate-slide-in-right {
-  animation: slideInRight 0.3s ease-out;
 }
 
 .animate-pulse-slow {
@@ -82,11 +69,6 @@
 @keyframes slideUp {
   from { opacity: 0; transform: translateY(20px); }
   to { opacity: 1; transform: translateY(0); }
-}
-
-@keyframes slideInRight {
-  from { opacity: 0; transform: translateX(20px); }
-  to { opacity: 1; transform: translateX(0); }
 }
 
 ::-webkit-scrollbar {
@@ -107,16 +89,3 @@
   background: #a1a1a1;
 }
 
-.gallery-360 {
-  perspective: 1000px;
-  overflow: hidden;
-  cursor: grab;
-}
-
-.gallery-360:active {
-  cursor: grabbing;
-}
-
-.tour-overlay {
-  background: radial-gradient(ellipse at center, transparent 0%, rgba(0,0,0,0.3) 100%);
-}

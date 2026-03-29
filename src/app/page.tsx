@@ -10,8 +10,8 @@ import ChatWidget from '@/components/ChatWidget';
 import { useAppStore } from '@/lib/store';
 import { ISTANBUL_DISTRICTS } from '@/lib/data';
 import {
-  Search, ArrowRight, Building2, Shield, Sparkles, MapPin, TrendingUp,
-  Home, Key, Star, Users, ChevronRight, Phone, Headphones
+  Search, ArrowRight, Building2, Shield, Sparkles, MapPin,
+  Star, Users, Headphones
 } from 'lucide-react';
 
 export default function HomePage() {
@@ -21,11 +21,12 @@ export default function HomePage() {
 
   const featuredProperties = properties.filter(p => p.isFeatured).slice(0, 6);
 
+  const uniqueDistricts = new Set(properties.map(p => p.district));
   const stats = [
-    { icon: Building2, label: 'Aktif İlan', value: '2,500+' },
-    { icon: Users, label: 'Mutlu Müşteri', value: '10,000+' },
-    { icon: MapPin, label: 'İstanbul Semti', value: '39' },
-    { icon: Star, label: 'Memnuniyet', value: '%98' },
+    { icon: Building2, label: 'Aktif İlan', value: `${properties.length}` },
+    { icon: MapPin, label: 'Bölge', value: `${uniqueDistricts.size}` },
+    { icon: Star, label: 'Öne Çıkan', value: `${properties.filter(p => p.isFeatured).length}` },
+    { icon: Users, label: 'Demo Mod', value: 'Aktif' },
   ];
 
   const features = [
@@ -36,18 +37,18 @@ export default function HomePage() {
     },
     {
       icon: Sparkles,
-      title: 'AI Öneriler',
-      desc: 'Yapay zeka destekli kişiselleştirilmiş mülk önerileri alın.',
+      title: 'Kişiselleştirilmiş Öneriler',
+      desc: 'Tercihlerinize dayalı kişiselleştirilmiş mülk önerileri alın.',
     },
     {
       icon: Shield,
-      title: 'Güvenli Platform',
-      desc: 'Doğrulanmış ilanlar ve güvenli iletişim altyapısı.',
+      title: 'Kolay Kullanım',
+      desc: 'Modern arayüz ile kolayca mülk ekleyin ve yönetin.',
     },
     {
       icon: Headphones,
-      title: 'Canlı Destek',
-      desc: '7/24 canlı destek ile her adımda yanınızdayız.',
+      title: 'Destek',
+      desc: 'Platform içi destek ile sorularınıza yanıt alın.',
     },
   ];
 
@@ -72,7 +73,7 @@ export default function HomePage() {
           <div className="max-w-2xl">
             <div className="inline-flex items-center gap-2 bg-istanbul-gold/20 text-istanbul-gold px-4 py-2 rounded-full text-sm font-medium mb-6">
               <Sparkles className="w-4 h-4" />
-              AI Destekli Emlak Platformu
+              Emlak Platformu
             </div>
 
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white font-display leading-tight mb-6">
@@ -82,7 +83,7 @@ export default function HomePage() {
 
             <p className="text-lg text-gray-300 mb-8 leading-relaxed max-w-lg">
               İstanbul&apos;un en prestijli semtlerinde satılık ve kiralık mülkler.
-              Akıllı arama ve yapay zeka destekli önerilerle size en uygun evi bulun.
+              Akıllı arama ve kişiselleştirilmiş önerilerle size en uygun evi bulun.
             </p>
 
             <div className="bg-white/10 backdrop-blur-md rounded-2xl p-2 flex flex-col sm:flex-row gap-2">

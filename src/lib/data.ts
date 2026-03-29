@@ -36,8 +36,6 @@ export const sampleProperties: Property[] = [
       { url: 'https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=800&h=600&fit=crop', alt: 'Yatak odası', isMain: false },
       { url: 'https://images.unsplash.com/photo-1600573472550-8090b5e0745e?w=800&h=600&fit=crop', alt: 'Banyo', isMain: false },
     ],
-    has360Tour: true,
-    tourUrl: '#360-tour',
     agentId: 'agent-1',
     agentName: 'Ahmet Yılmaz',
     agentPhone: '+90 532 111 22 33',
@@ -74,7 +72,6 @@ export const sampleProperties: Property[] = [
       { url: 'https://images.unsplash.com/photo-1497366811353-6870744d04b2?w=800&h=600&fit=crop', alt: 'İç mekan detay', isMain: false },
       { url: 'https://images.unsplash.com/photo-1524758631624-e2822e304c36?w=800&h=600&fit=crop', alt: 'Cadde görünümü', isMain: false },
     ],
-    has360Tour: false,
     agentId: 'agent-2',
     agentName: 'Elif Kaya',
     agentPhone: '+90 533 444 55 66',
@@ -111,8 +108,6 @@ export const sampleProperties: Property[] = [
       { url: 'https://images.unsplash.com/photo-1600210492493-0946911123ea?w=800&h=600&fit=crop', alt: 'Bahçe', isMain: false },
       { url: 'https://images.unsplash.com/photo-1600585154084-4e5fe7c39198?w=800&h=600&fit=crop', alt: 'Yatak odası', isMain: false },
     ],
-    has360Tour: true,
-    tourUrl: '#360-tour',
     agentId: 'agent-1',
     agentName: 'Ahmet Yılmaz',
     agentPhone: '+90 532 111 22 33',
@@ -149,7 +144,6 @@ export const sampleProperties: Property[] = [
       { url: 'https://images.unsplash.com/photo-1560185893-a55cbc8c57e8?w=800&h=600&fit=crop', alt: 'Banyo', isMain: false },
       { url: 'https://images.unsplash.com/photo-1555854877-bab0e564b8d5?w=800&h=600&fit=crop', alt: 'Balkon', isMain: false },
     ],
-    has360Tour: false,
     agentId: 'agent-3',
     agentName: 'Mehmet Demir',
     agentPhone: '+90 535 777 88 99',
@@ -186,8 +180,6 @@ export const sampleProperties: Property[] = [
       { url: 'https://images.unsplash.com/photo-1556761175-4b46a572b786?w=800&h=600&fit=crop', alt: 'Çalışma alanı', isMain: false },
       { url: 'https://images.unsplash.com/photo-1564069114553-7215e1ff1890?w=800&h=600&fit=crop', alt: 'Lobi', isMain: false },
     ],
-    has360Tour: true,
-    tourUrl: '#360-tour',
     agentId: 'agent-2',
     agentName: 'Elif Kaya',
     agentPhone: '+90 533 444 55 66',
@@ -221,7 +213,6 @@ export const sampleProperties: Property[] = [
       { url: 'https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=800&h=600&fit=crop', alt: 'Doğa', isMain: false },
       { url: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&h=600&fit=crop', alt: 'Gölet', isMain: false },
     ],
-    has360Tour: false,
     agentId: 'agent-3',
     agentName: 'Mehmet Demir',
     agentPhone: '+90 535 777 88 99',
@@ -258,8 +249,6 @@ export const sampleProperties: Property[] = [
       { url: 'https://images.unsplash.com/photo-1600573472550-8090b5e0745e?w=800&h=600&fit=crop', alt: 'Banyo', isMain: false },
       { url: 'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=800&h=600&fit=crop', alt: 'Dış görünüm', isMain: false },
     ],
-    has360Tour: true,
-    tourUrl: '#360-tour',
     agentId: 'agent-1',
     agentName: 'Ahmet Yılmaz',
     agentPhone: '+90 532 111 22 33',
@@ -296,7 +285,6 @@ export const sampleProperties: Property[] = [
       { url: 'https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?w=800&h=600&fit=crop', alt: 'Yatak odası', isMain: false },
       { url: 'https://images.unsplash.com/photo-1555854877-bab0e564b8d5?w=800&h=600&fit=crop', alt: 'Balkon', isMain: false },
     ],
-    has360Tour: false,
     agentId: 'agent-3',
     agentName: 'Mehmet Demir',
     agentPhone: '+90 535 777 88 99',
@@ -307,7 +295,3 @@ export const sampleProperties: Property[] = [
   },
 ];
 
-export function formatPrice(price: number, type: string): string {
-  const formatted = new Intl.NumberFormat('tr-TR').format(price);
-  return type === 'Kiralık' ? `${formatted} ₺/ay` : `${formatted} ₺`;
-}

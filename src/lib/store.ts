@@ -1,5 +1,5 @@
 import { create } from 'zustand';
-import { User, Property, FilterState, ChatMessage, SearchQuery, PropertyType, PropertyCategory } from '@/types';
+import { User, Property, FilterState, ChatMessage, SearchQuery } from '@/types';
 import { sampleProperties } from './data';
 import { v4 as uuidv4 } from 'uuid';
 
@@ -22,8 +22,6 @@ interface AppStore {
   setFilters: (filters: Partial<FilterState>) => void;
   resetFilters: () => void;
   getFilteredProperties: () => Property[];
-  addSearchHistory: (query: SearchQuery) => void;
-
   getRecommendations: () => Property[];
 
   addChatMessage: (text: string, sender: 'user' | 'agent') => void;
@@ -53,7 +51,7 @@ export const useAppStore = create<AppStore>((set, get) => ({
     {
       id: '1',
       sender: 'agent',
-      text: 'Merhaba! İstanbul Emlak Platformu\'na hoş geldiniz. Size nasıl yardımcı olabilirim? 🏠',
+      text: 'Merhaba! İstanbul Emlak Platformu\'na hoş geldiniz. Bu otomatik destek asistanıdır. Sorularınızı yazabilirsiniz.',
       timestamp: new Date().toISOString(),
     },
   ],
@@ -194,17 +192,6 @@ export const useAppStore = create<AppStore>((set, get) => ({
     }
 
     return result;
-  },
-
-  addSearchHistory: (query) => {
-    const { user } = get();
-    if (!user) return;
-    set({
-      user: {
-        ...user,
-        searchHistory: [query, ...user.searchHistory].slice(0, 20),
-      },
-    });
   },
 
   getRecommendations: () => {

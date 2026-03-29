@@ -45,8 +45,6 @@ export interface Property {
   buildingAge?: number;
   furnished: boolean;
   images: PropertyImage[];
-  has360Tour: boolean;
-  tourUrl?: string;
   agentId: string;
   agentName: string;
   agentPhone: string;
