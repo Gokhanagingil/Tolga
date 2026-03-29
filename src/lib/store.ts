@@ -22,8 +22,6 @@ interface AppStore {
   setFilters: (filters: Partial<FilterState>) => void;
   resetFilters: () => void;
   getFilteredProperties: () => Property[];
-  addSearchHistory: (query: SearchQuery) => void;
-
   getRecommendations: () => Property[];
 
   addChatMessage: (text: string, sender: 'user' | 'agent') => void;
@@ -194,17 +192,6 @@ export const useAppStore = create<AppStore>((set, get) => ({
     }
 
     return result;
-  },
-
-  addSearchHistory: (query) => {
-    const { user } = get();
-    if (!user) return;
-    set({
-      user: {
-        ...user,
-        searchHistory: [query, ...user.searchHistory].slice(0, 20),
-      },
-    });
   },
 
   getRecommendations: () => {

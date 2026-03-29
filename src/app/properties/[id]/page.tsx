@@ -9,8 +9,8 @@ import PropertyCard from '@/components/PropertyCard';
 import ChatWidget from '@/components/ChatWidget';
 import { useAppStore } from '@/lib/store';
 import {
-  Heart, Share2, MapPin, Bed, Bath, Maximize2, Building, Calendar, Sofa,
-  Phone, Mail, ChevronRight, Eye, Printer, Flag, CheckCircle2
+  Heart, MapPin, Bed, Bath, Maximize2, Building, Calendar, Sofa,
+  Phone, ChevronRight, Eye, CheckCircle2
 } from 'lucide-react';
 
 export default function PropertyDetailPage() {
@@ -99,9 +99,6 @@ export default function PropertyDetailPage() {
                       <Heart className={`w-5 h-5 ${fav ? 'fill-current' : ''}`} />
                     </button>
                   )}
-                  <button className="w-10 h-10 rounded-xl flex items-center justify-center border border-gray-200 text-gray-400 hover:bg-gray-50 transition-all">
-                    <Share2 className="w-5 h-5" />
-                  </button>
                 </div>
               </div>
 
@@ -179,24 +176,10 @@ export default function PropertyDetailPage() {
                   <Phone className="w-4 h-4" />
                   {property.agentPhone}
                 </a>
-                <button className="btn-secondary w-full">
-                  <Mail className="w-4 h-4" />
-                  Mesaj Gönder
-                </button>
               </div>
 
               <div className="pt-4 border-t border-gray-100">
-                <div className="text-xs text-gray-400 mb-2">İlan No: {property.id}</div>
-                <div className="flex gap-2">
-                  <button className="flex items-center gap-1 text-xs text-gray-400 hover:text-gray-600 transition-colors">
-                    <Printer className="w-3.5 h-3.5" />
-                    Yazdır
-                  </button>
-                  <button className="flex items-center gap-1 text-xs text-gray-400 hover:text-gray-600 transition-colors">
-                    <Flag className="w-3.5 h-3.5" />
-                    Bildir
-                  </button>
-                </div>
+                <div className="text-xs text-gray-400">İlan No: {property.id}</div>
               </div>
             </div>
           </div>
